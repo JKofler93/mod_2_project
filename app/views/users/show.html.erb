@@ -7,7 +7,9 @@
 <%=@user.age%><br><br>
 
 <label>Your Current Balance:</label><br>
-<%='$'%><%=@user.balance%><br>
+<%='$'%><%=@user.balance%><br><br>
 
-<%=button_to "Edit", @user, method: :edit %>
+<label> Update your information: </label><br>
+<%=link_to @user.user_name, edit_user_path(@user) %><br><br>
+
 <%=button_to "Delete", @user, method: :delete %>
