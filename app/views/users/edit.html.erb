@@ -1,0 +1,12 @@
+<h1>Update User: </h1>
+
+<%=form_for @user do |f|%>
+<%=f.label "Username:"%>
+<%=f.text_field :user_name%>
+
+<%=f.label "Age:"%>
+<%=f.number_field :age%>
+<%#user should not be able to change there balance here%>
+<%=f.submit "Submit"%>
+
+<%end%>

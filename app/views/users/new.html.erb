@@ -1,0 +1,16 @@
+<h1>Create a New User: </h1>
+
+<%=form_for @user do |f|%>
+<%=f.label "Username:"%>
+<%=f.text_field :user_name%>
+
+<%=f.label "Age:"%>
+<%=f.number_field :age%>
+
+
+<%=f.label "balance:"%>
+<%=f.number_field :balance%>
+
+<%=f.submit "Submit"%>
+
+<%end%>

@@ -1,0 +1,13 @@
+<h1>User Show Page</h1>
+
+<label>Username:</label><br>
+<%=@user.user_name%><br><br>
+
+<label>Age:</label><br>
+<%=@user.age%><br><br>
+
+<label>Your Current Balance:</label><br>
+<%='$'%><%=@user.balance%><br>
+
+<%=button_to "Edit", @user, method: :edit %>
+<%=button_to "Delete", @user, method: :delete %>

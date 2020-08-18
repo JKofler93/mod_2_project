@@ -1,0 +1,15 @@
+<h1>UserCurrencies#new</h1>
+
+<%=form_for @user_currency do |f|%>
+
+<%=f.label "How much you wanna buy ? "%>
+<%=f.text_field :amount%>
+
+<%=f.label "Which Crypto do you want ? "%>
+<%=f.collection_select :user_id, @users, :id, :user_name %>  <% #HOW DO YOU AUTO FILL THE USER'S NAME? %>
+
+<%=f.label "Which Crypto do you want ? "%>
+<%=f.collection_select :currency_id, @currencies, :id, :crypto %>
+
+<%=f.submit%>
+<%end%>

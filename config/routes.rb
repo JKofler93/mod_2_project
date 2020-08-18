@@ -1,3 +1,26 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'user_currencies/index'
+  get 'user_currencies/show'
+  get 'user_currencies/new'
+  get 'user_currencies/create'
+  get 'user_currencies/edit'
+  get 'user_currencies/update'
+  get 'user_currencies/destroy'
+  get 'currencies/index'
+  get 'currencies/show'
+  get 'currencies/new'
+  get 'currencies/create'
+  get 'currencies/edit'
+  get 'currencies/update'
+  get 'currencies/destroy'
+  get 'users/index'
+  get 'users/show'
+  get 'users/new'
+  get 'users/create'
+  get 'users/edit'
+  get 'users/update'
+  get 'users/destroy'
+  resources :users
+  resources :currencies 
+  resources :user_currencies
 end

@@ -1,0 +1,6 @@
+<h1>All Users</h1>
+<%#LET'S LEAVE THIS TO TEST DELETE FUNCTION%>
+
+<% @users.each do |user|%>
+<%=link_to user.user_name, user_path(user)%><br>
+<%end%>
