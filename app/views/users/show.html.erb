@@ -19,7 +19,7 @@
   <caption>Your Investments:</caption>
   <thead>
     <tr>
-      <th scope="col" colspan="2">Crypto Currency:</th>
+      <th scope="col" colspan="2">Crypto Currency Report:</th>
       <th scope="col">Total Units:</th>
       <th scope="col">Total Value:</th>
     </tr>
@@ -27,13 +27,14 @@
 
   <tbody>
     <tr>
-      <td><% @user.currencies.uniq.each do |currency|%><br>
-            <%= currency.crypto%>
+      <td><% @user.currencies.uniq.each do |currency|%>
+           <%= currency.crypto%><br>
+
                 <%end%></td>
 
-      <td> <% @user.user_currencies.map do |currency|%></td><br>
-              <td>  <%= currency.amount%></td><br>
-                    <%end%>
+      <td> <% @user.user_currencies.map do |user_currency|%>
+              <%= user_currency.amount%><br>
+                    <%end%></td>
     </tr>
   </tbody>
 </table>
