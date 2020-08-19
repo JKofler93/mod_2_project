@@ -1,4 +1,4 @@
-<h1>User Show Page</h1>
+<h1>User Show Page</h1> 
 
 <label>Username:</label><br>
 <%=@user.user_name%><br><br>
@@ -13,3 +13,29 @@
 <%=link_to @user.user_name, edit_user_path(@user) %><br><br>
 
 <%=button_to "Delete", @user, method: :delete %>
+
+
+<table>
+  <caption>Your Investments:</caption>
+  <thead>
+    <tr>
+      <th scope="col" colspan="2">Crypto Currency:</th>
+      <th scope="col">Total Units:</th>
+      <th scope="col">Total Value:</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><% @user.currencies.uniq.each do |currency|%><br>
+            <%= currency.crypto%>
+                <%end%></td>
+
+      <td> <% @user.user_currencies.map do |currency|%></td><br>
+              <td>  <%= currency.amount%></td><br>
+                    <%end%>
+    </tr>
+  </tbody>
+</table>
+
+              

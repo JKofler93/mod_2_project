@@ -15,7 +15,7 @@ class UserCurrenciesController < ApplicationController
 
   def create
     @user_currency = UserCurrency.create(user_currencies_params)
-    redirect_to user_currencies_path(@user_currency)
+    redirect_to user_currency_path(@user_currency)
   end
 
   # def edit    ### USER SHOULD NOT BE ABLE TO EDIT USERCURRENCY FROM DATABASE !!!
@@ -34,7 +34,7 @@ class UserCurrenciesController < ApplicationController
   private
 
   def user_currencies_params
-    params.require(:user_currencies).permit(:amount, :user_id, :currency_id)    
+    params.require(:user_currency).permit(:amount, :user_id, :currency_id)    
   end
 
 end

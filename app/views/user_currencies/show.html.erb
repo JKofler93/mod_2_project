@@ -2,36 +2,29 @@
 
 
 <label>Crypto:</label><br>
-<%=@user_currencies.user_id %><br><br>
+<%=@user_currency.currency.crypto %><br><br>
 
 <label>Symbol:</label><br>
-<%%><br><br>
+<%=@user_currency.currency.symbol %><br><br>
 
 <label>Units You've Purchased: </label><br>
-<%=@user_currencies.amount%><br><br>
+<%=@user_currency.amount%><br><br>
 
 <label>Price:</label><br>
-<%='$'%><%=@user_currencies.currency.price%><br>
+<%='$'%><%=@user_currency.currency.price %><br><br>
 
 <label>Sub Total:</label><br>
-<%='$'%><%%><br><br>
+<%='$'%><%= @user_currency.crypto_total %><br><br>
 
 <label>Taxes:</label><br>
-<%='$'%><%%><br><br>
+<%='$'%><%= @user_currency.taxes %><br><br>
 
 <label>Grand Total:</label><br>
-<%='$'%><%%><br><br>
+<%='$'%><%= @user_currency.grand_total %><br><br>
 
+    
+    
+    
 
-
-
-
-<label> Buy Cryptos </label>
-
-<label> Sell Cryptos </label>
-
-<label> Deposit to Balance: </label>
-
-<label> Withdraw from Balance:  </label>
 
 <%# A USER SHOULD NOT BE ABLE TO EDIT OR DELETE A TRANSCATION !!!! %>

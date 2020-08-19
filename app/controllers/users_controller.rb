@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_currencies = UserCurrency.all
   end
 
   def new

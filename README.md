@@ -11,9 +11,9 @@ Domains:
 User
 :user_name#
 :age#
-:email
-:password (potentially) 
-:account (starting amount in US dollar)
+:email                                          ####email_field
+:password (potentially)                         ###password_field
+:balance (starting amount in US dollar)
 
 UserCurrency
 :amount (in US dollars)
@@ -41,11 +41,11 @@ User story:
 - a user needs a Password to long in
 - a user can buy a currency
 - a user can sell a currency
-- a user can view their current balance
+- XXXa user can view their current balance
 - a user can view their owned crypto currencies
 - a user  can view their past transactions
-- a user can edit their profile 
-- a user can delete their profile 
+- XXXa user can edit their profile 
+- XXXa user can delete their profile 
 
 Additonal:
 -Use API to seed currency

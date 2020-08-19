@@ -8,7 +8,7 @@ UserCurrency.destroy_all
     User.create(user_name: Faker::Name.name  ,age: Faker::Number.within(range: 18..109) , balance: Faker::Number.within(range: 100..10000)  )
 end
   
-bitcoin = Currency.create(price: 175, symbol: "BTC", crypto: "bitcoin" )
+bitcoin = Currency.create(price: 175, symbol: "BTC", crypto: "Bitcoin" )
 ethereum = Currency.create(price: 200, symbol: "ATH", crypto: "Etheruem" )
 litecoin = Currency.create(price: 30, symbol: "LTC", crypto: "Litecoin" )
 dodgecoin = Currency.create(price: 42, symbol: "DOGE", crypto: "Dodgecoin" )

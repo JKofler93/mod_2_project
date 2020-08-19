@@ -2,13 +2,14 @@
 
 <%=form_for @user_currency do |f|%>
 
-<%=f.label "How much you wanna buy ? "%>
+<%=f.label "How much you do you want to buy ? "%>
 <%=f.text_field :amount%>
 
-<%=f.label "Which Crypto do you want ? "%>
-<%=f.collection_select :user_id, @users, :id, :user_name %>  <% #HOW DO YOU AUTO FILL THE USER'S NAME? %>
+<%=f.label "User ? "%>
+<%=f.collection_select :user_id, @users, :id, :user_name %> 
 
-<%=f.label "Which Crypto do you want ? "%>
+
+<%=f.label "Which Crypto-currency do you want to buy ? "%>
 <%=f.collection_select :currency_id, @currencies, :id, :crypto %>
 
 <%=f.submit%>
