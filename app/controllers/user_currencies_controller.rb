@@ -31,6 +31,14 @@ class UserCurrenciesController < ApplicationController
   # def destroy   ### USER SHOULD NOT BE ABLE TO DELETE USERCURRENCY FROM DATABASE !!!
   # end
 
+
+
+  def buy_form
+    @user_currency = UserCurrency.new
+    @user = User.find(sessions[:user_id])
+  end 
+
+
   private
 
   def user_currencies_params

@@ -4,7 +4,7 @@ User.destroy_all
 Currency.destroy_all
 UserCurrency.destroy_all
 
-10.times do 
+2.times do 
     User.create(user_name: Faker::Name.name  ,age: Faker::Number.within(range: 18..109) , balance: Faker::Number.within(range: 100..10000)  )
 end
   

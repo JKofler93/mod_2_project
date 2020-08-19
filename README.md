@@ -46,8 +46,24 @@ User story:
 - a user  can view their past transactions
 - XXXa user can edit their profile 
 - XXXa user can delete their profile 
-    
+
 Additonal:
 -Use API to seed currency
 - custom tracker feature: buy x amount of y currency at z price. 
 
+
+
+
+
+
+
+CUT OUT:
+
+<label>Sub Total:</label><br>
+<%='$'%><%= @user_currency.crypto_total %><br><br>
+
+<label>Taxes:</label><br>
+<%='$'%><%= @user_currency.taxes %><br><br>
+
+<label>Grand Total:</label><br>
+<%='$'%><%= @user_currency.grand_total %><br><br>
