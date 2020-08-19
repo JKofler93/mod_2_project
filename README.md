@@ -42,8 +42,8 @@ User story:
 - a user can buy a currency
 - a user can sell a currency
 - XXXa user can view their current balance
-- a user can view their owned crypto currencies
-- a user  can view their past transactions
+- XXXa user can view their owned crypto currencies
+- XXXa user  can view their past transactions
 - XXXa user can edit their profile 
 - XXXa user can delete their profile 
 

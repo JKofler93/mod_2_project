@@ -12,28 +12,63 @@
 <label> Update your information: </label><br>
 <%=link_to @user.user_name, edit_user_path(@user) %><br><br>
 
-<%=button_to "Delete", @user, method: :delete %>
+<%=button_to "Delete", @user, method: :delete %><br>
+
 
 
 <table>
-  <caption>Your Investments:</caption>
+  <caption>Your Cryptos:</caption>
   <thead>
     <tr>
-      <th scope="col" colspan="2">Crypto Currency Report:</th>
-      <th scope="col">Total Units:</th>
-      <th scope="col">Total Value:</th>
+      <th scope="col" colspan="2"> Crypto:</th>
+      <th scope="col">Units:</th>
+      <th scope="col">Values in USD:</th>
     </tr>
   </thead>
 
   <tbody>
     <tr>
-      <td><% @user.currencies.uniq.each do |currency|%>
+      <td><%@user.total_owned_cryptos.each do |crypto, values|%>
+            <%= " #{crypto}"%><br> 
+                <%end%></td>
+
+      <td><%@user.total_owned_cryptos.each do |crypto, values|%>
+            <%="#{values[:amount]}"%><br> 
+                <%end%></td>
+
+        <td><%@user.total_owned_cryptos.each do |crypto, values|%>
+            <%= "$#{values[:price] * values[:amount]}"%><br> 
+                <%end%></td>
+    </tr>
+  </tbody>
+</table><br><br>
+
+
+
+
+<table>
+  <caption>Your Past Transactions:</caption>
+  <thead>
+    <tr>
+      <th scope="col" colspan="2"> Crypto:</th>
+      <th scope="col">Units:</th>
+      <th scope="col">Values in USD:</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><% @user.currencies.each do |currency|%>
            <%= currency.crypto%><br>
 
                 <%end%></td>
 
       <td> <% @user.user_currencies.map do |user_currency|%>
               <%= user_currency.amount%><br>
+                    <%end%></td>
+
+                    <td> <% @user.user_currencies.map do |user_currency|%>
+              <%='$'%><%= user_currency.amount * user_currency.currency.price %><br>
                     <%end%></td>
     </tr>
   </tbody>

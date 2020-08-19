@@ -1,4 +1,5 @@
 class UserCurrenciesController < ApplicationController
+  before_action :authorized?, only: [:index, :buy_form, :sell_form]
   def index
     @user_currencies = UserCurrency.all
   end
@@ -34,6 +35,11 @@ class UserCurrenciesController < ApplicationController
 
 
   def buy_form
+    @user_currency = UserCurrency.new
+    @user = User.find(sessions[:user_id])
+  end 
+
+  def sell_form 
     @user_currency = UserCurrency.new
     @user = User.find(sessions[:user_id])
   end 
