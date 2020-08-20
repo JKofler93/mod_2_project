@@ -7,9 +7,9 @@ class User < ApplicationRecord
 
         self.user_currencies.each do |uc|
            if hash_totals[uc.currency.crypto]
-                hash_totals[uc.currency.crypto][:amount] = hash_totals[uc.currency.crypto][:amount] + uc.amount
+                hash_totals[uc.currency.crypto][:amount] = hash_totals[uc.currency.crypto][:amount] + uc.amount.to_i
            else
-                hash_totals[uc.currency.crypto] =  {amount: uc.amount}
+                hash_totals[uc.currency.crypto] =  { amount: uc.amount }
             end
         end
         hash_totals

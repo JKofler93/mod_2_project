@@ -10,8 +10,6 @@
 <%='$'%><%=@user.balance%><br><br>
 
 
-<label> Let's Buy some Crypto: </label><br>
-<%=link_to "Let's Do it!", new_user_currency_path %><br><br>
 
 
 <label> Update Your Profile: </label><br>
@@ -33,7 +31,7 @@
   <tbody>
     <tr>
       <td><%@user.total_owned_cryptos.each do |crypto, values|%>
-            <%= " #{crypto}"%><br> 
+            <%= "#{crypto}"%><br> 
                 <%end%></td>
 
       <td><%@user.total_owned_cryptos.each do |crypto, values|%>
@@ -72,7 +70,7 @@
                     <%end%></td>
 
                     <td> <% @user.user_currencies.map do |user_currency|%>
-              <%='$'%><%= user_currency.amount * user_currency.currency.price %><br>
+              <%='$'%><%= user_currency.amount.to_i * user_currency.currency.price.to_i %><br>
                     <%end%></td>
     </tr>
   </tbody>
