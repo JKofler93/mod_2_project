@@ -2,8 +2,8 @@
 
 <% if flash[:errors]%>
 <% flash[:errors].each do |error|%>
-        <%= error%>
-    <%end%>
+<%= error%>
+<%end%>
 <%end%>
 
 
@@ -13,7 +13,10 @@
 
 <%=f.label "Age:"%>
 <%=f.number_field :age%>
-<%#user should not be able to change there balance here%>
+
+<%=f.label "Password:"%>
+<%=f.password_field :password_digest%>
+
 <%=f.submit "Submit"%>
 
 <%end%>

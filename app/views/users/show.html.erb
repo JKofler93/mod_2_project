@@ -1,6 +1,8 @@
 <h1>User Show Page</h1> 
 
-<label>Username:</label><br>
+
+<div class="parent">
+<div class="div1"><label>Username:</label><br>
 <%=@user.user_name%><br><br>
 
 <label>Age:</label><br>
@@ -10,14 +12,16 @@
 <%='$'%><%=@user.balance%><br><br>
 
 
-
+<label> Buy/Sell Cryptos: </label><br>
+<%=link_to "Let's Trade!", new_user_currency_path %><br><br>
 
 <label> Update Your Profile: </label><br>
 <%=link_to "Update", edit_user_path(@user) %><br><br>
 
-<%=button_to "Delete", @user, method: :delete %><br>
+<%=button_to "Delete", @user, method: :delete %><br> </div>
 
 
+<div class="div2">
 <table>
   <caption>Your Cryptos:</caption>
   <thead>
@@ -43,11 +47,9 @@
                 <%end%></td>
     </tr>
   </tbody>
-</table><br><br>
+</table><br><br> </div>
 
-
-
-
+<div class="div3"> 
 <table>
   <caption>Your Past Transactions:</caption>
   <thead>
@@ -74,6 +76,21 @@
                     <%end%></td>
     </tr>
   </tbody>
-</table>
+</table></div>
+
+
+
+
+
+
+
+<div class="div4"> </div>
+</div>
+
+
+
+
+
+
 
               
