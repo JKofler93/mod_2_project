@@ -1,16 +1,18 @@
-<h1>UserCurrencies#new</h1>
+<h1>Transaction Page </h1>
 
+
+<h1> Buy/Sell Crypto: </h1>
 <%=form_for @user_currency do |f|%>
 
-<%=f.label "How much you do you want to buy ? "%>
-<%=f.text_field :amount%>
+<%=f.label "Units "%>
+<%=f.number_field :amount%>
 
-<%=f.label "User ? "%>
+<%=f.label "User"%>
 <%=f.collection_select :user_id, @users, :id, :user_name %> 
 
 
-<%=f.label "Which Crypto-currency do you want to buy ? "%>
+<%=f.label "Crypto Currency"%>
 <%=f.collection_select :currency_id, @currencies, :id, :crypto %>
 
-<%=f.submit%>
-<%end%>
+<%=f.submit "Make a Trade"%>
+<%end%><br><br>

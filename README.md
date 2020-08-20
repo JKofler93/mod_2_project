@@ -39,8 +39,8 @@ belongs to currency
 User story:
 - a user can log in
 - a user needs a Password to long in
-- a user can buy a currency
-- a user can sell a currency
+- XXXa user can buy a currency
+- XXXa user can sell a currency
 - XXXa user can view their current balance
 - XXXa user can view their owned crypto currencies
 - XXXa user  can view their past transactions
@@ -57,7 +57,7 @@ Additonal:
 
 
 
-CUT OUT:
+CUT OUT: ????
 
 <label>Sub Total:</label><br>
 <%='$'%><%= @user_currency.crypto_total %><br><br>

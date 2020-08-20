@@ -1,11 +1,12 @@
 class UserCurrenciesController < ApplicationController
-  before_action :authorized?, only: [:index, :buy_form, :sell_form]
+ 
   def index
     @user_currencies = UserCurrency.all
   end
 
   def show
     @user_currency = UserCurrency.find(params[:id])
+    @user = @user_currency.user
   end
 
   def new
@@ -14,36 +15,14 @@ class UserCurrenciesController < ApplicationController
     @currencies = Currency.all
   end
 
-  def create
+  def create 
     @user_currency = UserCurrency.create(user_currencies_params)
+    @user = @user_currency.user
+    @amount = @user_currency.amount
+    @user.balance = @user.balance - @amount
+    @user.save
     redirect_to user_currency_path(@user_currency)
   end
-
-  # def edit    ### USER SHOULD NOT BE ABLE TO EDIT USERCURRENCY FROM DATABASE !!!
-  #   @user = UserCurrency.find(params[:id])
-  # end
-    
-  # def update   ### USER SHOULD NOT BE ABLE TO UPDATE USERCURRENCY FROM DATABASE !!!
-  #   @user = UserCurrency.find(params[:id])
-  #   @user.update(user_currencies_params
-  #   redirect_to user_currencies_path(@user)
-  # end
-
-  # def destroy   ### USER SHOULD NOT BE ABLE TO DELETE USERCURRENCY FROM DATABASE !!!
-  # end
-
-
-
-  def buy_form
-    @user_currency = UserCurrency.new
-    @user = User.find(sessions[:user_id])
-  end 
-
-  def sell_form 
-    @user_currency = UserCurrency.new
-    @user = User.find(sessions[:user_id])
-  end 
-
 
   private
 

@@ -22,3 +22,9 @@
 <label>Grand Total:</label><br>
 <%='$'%><%= @user_currency.grand_total %><br><br>
 
+<label>Remaining Balance:</label><br>
+<%='$'%><%= @user_currency.user.balance  %><br><br>
+
+
+<label> Let's Buy some Crypto: </label><br>
+<%=link_to "Let's Do It!", new_user_currency_path %><br><br>
