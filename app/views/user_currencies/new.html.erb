@@ -3,7 +3,7 @@
 
 <h1> Buy/Sell Crypto: </h1>
 <%=form_for @user_currency do |f|%>
-
+<p> Negative numbers sell / Positive numbers buy </p>
 <%=f.label "Units "%>
 <%=f.number_field :amount%>
 

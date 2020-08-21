@@ -11,6 +11,8 @@ User.create(user_name: "Sam"  ,age: Faker::Number.within(range: 18..109) , balan
 # 2.times do 
 #     User.create(user_name: Faker::Name.name  ,age: Faker::Number.within(range: 18..109) , balance: Faker::Number.within(range: 100..10000)  )
 # end
+
+
   
 bitcoin = Currency.create(price: 175, symbol: "BTC", crypto: "Bitcoin" )
 ethereum = Currency.create(price: 200, symbol: "ATH", crypto: "Etheruem" )

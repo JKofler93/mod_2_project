@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_20_190530) do
+ActiveRecord::Schema.define(version: 2020_08_17_210324) do
 
   create_table "currencies", force: :cascade do |t|
+    t.string "crypto"
     t.integer "price"
+    t.string "symbol"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "symbol"
-    t.string "crypto"
   end
 
   create_table "user_currencies", force: :cascade do |t|
@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 2020_08_20_190530) do
     t.string "user_name"
     t.integer "age"
     t.integer "balance"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
   end
 
 end

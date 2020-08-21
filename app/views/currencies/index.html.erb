@@ -1,5 +1,5 @@
 <h1>Crypto Index</h1>
 
 <% @currencies.each do |currency| %>
-<%=link_to currency.crypto, currency_path(currency)%><br>
+<%= link_to currency.crypto, currency_path(currency)%><br>
 <%end%>
